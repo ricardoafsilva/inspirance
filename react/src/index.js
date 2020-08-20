@@ -5,6 +5,8 @@ import Home from "./containers/Home.jsx";
 import "./Main.scss";
 
 ReactDOM.render(
-    <Home />,
+    <div className='main-container'>
+        <Home />
+    </div>,
     document.getElementById("root")
 );

@@ -1,0 +1,47 @@
+@import '../patterns';
+
+.step-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border: 2px solid $rose;
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    &.active {
+        box-shadow: 0 0 15px 0 $rose;
+    }
+
+    &.disabled {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+        filter: alpha(opacity=40);
+        -moz-opacity: 0.4;
+        -khtml-opacity: 0.4;
+        opacity: 0.4;
+    }
+
+    &.done {
+        border-color: $deluge;
+
+        .icon-wrapper {
+            background-color: $deluge;
+        }
+    }
+
+    .icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: $rose;
+        border-radius: 50%;
+    }
+
+    .step-icon {
+        max-width: 26px;
+        max-height: 26px;
+    }
+}

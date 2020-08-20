@@ -2,8 +2,20 @@
 
 * {
     font-family: 'Montserrat', sans-serif;
+    color: $white;
 }
 
 body {
     background-color: $blackRussian;
+}
+
+.main-container {
+    padding: 60px 15px 30px;
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+    .main-container {
+        padding: 120px 15px 45px;
+    }
 }

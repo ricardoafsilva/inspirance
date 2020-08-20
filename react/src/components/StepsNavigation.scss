@@ -1,0 +1,10 @@
+@import '../patterns';
+
+.steps-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0;
+}

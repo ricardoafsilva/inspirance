@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import cx from 'classnames';
+import React, { Component } from 'react'
+import cx from 'classnames'
 
-import iconHome from './../../public/images/icon-home.png';
-import iconHomeActive from './../../public/images/icon-home-active.png';
-import iconSearch from './../../public/images/icon-search.png';
-import iconSearchActive from './../../public/images/icon-search-active.png';
-import iconRandom from './../../public/images/icon-random.png';
-import iconRandomActive from './../../public/images/icon-random-active.png';
-import iconFavorite from './../../public/images/icon-favorite.png';
-import iconFavoriteActive from './../../public/images/icon-favorite-active.png';
+import iconHome from './../../public/images/icon-home.png'
+import iconHomeActive from './../../public/images/icon-home-active.png'
+import iconSearch from './../../public/images/icon-search.png'
+import iconSearchActive from './../../public/images/icon-search-active.png'
+import iconRandom from './../../public/images/icon-random.png'
+import iconRandomActive from './../../public/images/icon-random-active.png'
+import iconFavorite from './../../public/images/icon-favorite.png'
+import iconFavoriteActive from './../../public/images/icon-favorite-active.png'
 
-import './Menu.scss';
+import './Menu.scss'
 
 const menuItems = [
     {
@@ -37,11 +37,11 @@ const menuItems = [
         iconActive: iconFavoriteActive,
         url: '/saved'
     }
-];
+]
 
 class Menu extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             selected: 0
@@ -49,7 +49,7 @@ class Menu extends Component {
     }
 
     handleClick = (index, url) => (e) => {
-        e.stopPropagation();
+        e.stopPropagation()
 
         this.setState({
             selected: index
@@ -58,13 +58,13 @@ class Menu extends Component {
 
     render() {
         const items = menuItems.map((item, index) => {
-            let currentActive = index === this.state.selected;
+            let currentActive = index === this.state.selected
 
             return <li className={cx('menu-item', currentActive && 'active')} onClick={this.handleClick(index, item.url)} key={`menu-item-${index}`}>
                 <img className='item-icon' src={currentActive ? item.iconActive : item.iconRegular} />
                 <p className='item-title'>{item.title}</p>
             </li>
-        });
+        })
 
         return (
             <div className='main-menu-container'>
@@ -72,8 +72,8 @@ class Menu extends Component {
                     {items}
                 </ul>
             </div>
-        );
+        )
     }
 }
 
-export default Menu;
+export default Menu
