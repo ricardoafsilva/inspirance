@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 
 import Heading1 from '../components/typography/Heading1.jsx'
 import Menu from '../components/Menu.jsx'
+import ResultsContainer from '../components/ResultsContainer.jsx'
+import RoomsContainer from '../components/RoomsContainer.jsx'
 import StepsNavigation from '../components/StepsNavigation.jsx'
+import StylesContainer from '../components/StylesContainer.jsx'
 
 import iconRooms from './../../public/images/icon-rooms.png'
 import iconResults from './../../public/images/icon-results.png'
@@ -45,11 +48,11 @@ class Home extends Component {
             stepContainer
 
         currentStep === 0 ?
-            stepContainer = <p>Rooms</p>
+            stepContainer = <RoomsContainer />
         : currentStep === 1 ?
-            stepContainer = <p>Styles</p>
+            stepContainer = <StylesContainer />
         :
-            stepContainer = <p>Results</p>
+            stepContainer = <ResultsContainer />
 
         return stepContainer
     }
