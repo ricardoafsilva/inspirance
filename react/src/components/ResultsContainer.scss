@@ -1,1 +1,11 @@
 @import '../patterns';
+
+.steps-options-containers {
+    &.results {
+        .paragraph{
+            &.small {
+                margin: 0 0 2px;
+            }
+        }
+    }
+}

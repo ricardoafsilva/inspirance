@@ -31,7 +31,7 @@ class ResultsList extends Component {
         let items = props.items.map((item, index) => {
             let selected = index === this.state.selected
 
-            return <ResultItem className={selected && 'selected'} onClick={this.handleClick(index)} key={`result-item-${index}`} />
+            return <ResultItem className={selected && 'selected'} data={item} onClick={this.handleClick(index)} key={`result-item-${index}`} />
         })
 
         return (

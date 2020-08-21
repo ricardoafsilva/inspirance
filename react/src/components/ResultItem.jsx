@@ -13,9 +13,12 @@ class ResultItem extends Component {
     }
 
     render() {
+        let props = this.props
+
         return (
             <div className='result-item-container'>
-
+                <div className='result-image-wrapper' style={{backgroundImage: `url(${props.data.link})`}}>
+                </div>
             </div>
         )
     }
