@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
 
-import iconArrow from './../../public/images/icon-gray-arrow.png'
-import Paragraph from './typography/Paragraph.jsx'
+import iconArrow from './../../../public/images/icon-gray-arrow.png'
+import Paragraph from '../typography/Paragraph.jsx'
 
 import './SelectInput.scss'
 

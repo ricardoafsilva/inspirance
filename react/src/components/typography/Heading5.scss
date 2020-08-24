@@ -1,0 +1,14 @@
+@import '../../patterns';
+
+h5 {
+    font-size: 18px;
+    font-weight: $fwMedium;
+    line-height: 22px;
+    text-align: center;
+    color: $white;
+    margin: 0 auto 45px;
+
+    &.left {
+        text-align: left;
+    }
+}

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import cx from 'classnames'
 
 import Paragraph from './typography/Paragraph.jsx'
-import SelectInput from './SelectInput.jsx'
+import SelectInput from './forms/SelectInput.jsx'
 
 import './RoomsContainer.scss'
 
