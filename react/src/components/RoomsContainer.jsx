@@ -6,7 +6,7 @@ import SelectInput from './forms/SelectInput.jsx'
 
 import './RoomsContainer.scss'
 
-const rooms = [
+const defaultRooms = [
     'Any room',
     'Attic',
     'Balcony',
@@ -30,17 +30,47 @@ const rooms = [
 class RoomsContainer extends Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            selectItems: defaultRooms
+        }
     }
 
     static defaultProps = {
         className: '',
     }
 
+    triggerCustomEvent(selectedRoom) {
+        window.dispatchEvent(
+            new CustomEvent('onRoomTypeChange', {
+                detail: {
+                    selectedRoom
+                }
+            })
+        )
+
+        this.props.handleChange(1)
+    }
+
+    setSelectItems = (event) => {
+        this.setState({
+            selectItems: event.detail.rooms
+        })
+    }
+
+    componentDidMount() {
+        window.addEventListener('setRoomsItems', this.setSelectItems)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('setRoomsItems', this.setSelectItems)
+    }
+
     render() {
         return (
             <div className='steps-options-containers rooms'>
                 <Paragraph small>Select a room:</Paragraph>
-                <SelectInput items={rooms} />
+                <SelectInput items={this.state.selectItems} getSelected={this.triggerCustomEvent.bind(this)} />
             </div>
         )
     }

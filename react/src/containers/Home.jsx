@@ -37,7 +37,8 @@ class Home extends Component {
         }
     }
 
-    handleChange(index) {
+    handleChange(index, e) {
+        console.log(e)
         this.setState({
             currentStep: index
         })
@@ -48,9 +49,9 @@ class Home extends Component {
             stepContainer
 
         currentStep === 0 ?
-            stepContainer = <RoomsContainer />
+            stepContainer = <RoomsContainer handleChange={this.handleChange.bind(this)} />
         : currentStep === 1 ?
-            stepContainer = <StylesContainer />
+            stepContainer = <StylesContainer handleChange={this.handleChange.bind(this)} />
         :
             stepContainer = <ResultsContainer />
 
@@ -62,7 +63,7 @@ class Home extends Component {
             <div>
                 <Menu />
                 <Heading1>How do you want to be inspired today?</Heading1>
-                <StepsNavigation steps={steps} handleChange={this.handleChange.bind(this)}/>
+                <StepsNavigation currentStep={this.state.currentStep} steps={steps} handleChange={this.handleChange.bind(this)}/>
                 {this.renderStepContainer()}
             </div>
         )

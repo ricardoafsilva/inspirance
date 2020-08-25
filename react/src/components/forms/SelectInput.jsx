@@ -21,13 +21,19 @@ class SelectInput extends Component {
         items: []
     }
 
+    getSelected = () => {
+        return this.props.items[this.state.selected]
+    }
+
     handleClick = (index) => (e) => {
         e.stopPropagation()
+
+        let isDifferentSelected = index !== this.state.selected
 
         this.setState({
             open: !this.state.open,
             selected: index
-        })
+        }, () => {if(this.props.getSelected && isDifferentSelected) this.props.getSelected(this.getSelected())})
     }
 
     render() {

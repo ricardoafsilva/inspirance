@@ -14,7 +14,7 @@ class StepsNavigation extends Component {
     }
 
     handleClick = (index) => (e) => {
-        this.props.handleChange(index)
+        this.props.handleChange(index, e)
 
         this.setState({
             currentStep: index
@@ -23,7 +23,7 @@ class StepsNavigation extends Component {
 
     render() {
         const stepsList = this.props.steps.map((step, index) => {
-            let currentStep = this.state.currentStep,
+            let currentStep = this.props.currentStep || this.state.currentStep,
                 isActive = index === currentStep,
                 isDone = index < currentStep
 
