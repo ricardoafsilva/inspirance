@@ -6,7 +6,7 @@ import ResultsList from './ResultsList.jsx'
 
 import './ResultsContainer.scss'
 
-const items = [{
+const defaultItems = [{
         "kind": "customsearch#result",
         "title": "19+ The 30-Second Trick for Rustic Industrial Decor ...",
         "htmlTitle": "19+ The 30-Second Trick for Rustic <b>Industrial</b> Decor ...",
@@ -211,10 +211,28 @@ const items = [{
 class ResultsContainer extends Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            items: defaultItems
+        }
     }
 
     static defaultProps = {
         className: '',
+    }
+
+    setResultsItems = (event) => {
+        this.setState({
+            items: event.detail.results
+        })
+    }
+
+    componentDidMount() {
+        window.addEventListener('setResultsItems', this.setResultsItems)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('setResultsItems', this.setResultsItems)
     }
 
     render() {
@@ -224,7 +242,7 @@ class ResultsContainer extends Component {
                     <Paragraph small>Inspirations for:</Paragraph>
                     <Paragraph medium>Change query</Paragraph>
                 </div>
-                <ResultsList items={items} />
+                <ResultsList items={this.state.items} />
             </>
         )
     }

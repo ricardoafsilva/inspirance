@@ -38,7 +38,6 @@ class Home extends Component {
     }
 
     handleChange(index, e) {
-        console.log(e)
         this.setState({
             currentStep: index
         })
