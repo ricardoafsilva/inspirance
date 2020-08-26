@@ -1,0 +1,26 @@
+{
+  "name": "inspirance-backbone",
+  "version": "1.0.0",
+  "description": "2020 onboarding project.",
+  "main": "index.js",
+  "repository": "git@github.com:ricardoafsilva/inspirance.git",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ricardo Silva",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "grunt": "^1.3.0",
+    "grunt-babel": "^8.0.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-uglify": "^5.0.0",
+    "grunt-run": "^0.8.1"
+  }
+}

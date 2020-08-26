@@ -1,5 +1,5 @@
 .git
-/backbone/node_modules/
-/backbone/test/coverage/
+/dist/
+/node_modules/
 /react/dist/
 /react/node_modules/
