@@ -1,10 +1,11 @@
 requirejs.config({
+    baseUrl: '../lib',
     paths: {
-        backbone: "../lib/backbone-min",
-        jquery: "../lib/jquery-3.5.1.min",
-        tpl: "../lib/tpl",
-        underscore: "../lib/underscore-min",
+        backbone: './backbone-min',
+        jquery: './jquery-3.5.1.min',
+        tpl: './tpl',
+        underscore: './underscore-min',
     }
 });
 
-requirejs(["app"]);
+requirejs(['App'])

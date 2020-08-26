@@ -1,5 +1,5 @@
-const { merge } = require('webpack-merge');
-const commonConfig = require('./webpack.config.common');
+const { merge } = require('webpack-merge')
+const commonConfig = require('./webpack.config.common')
 
 module.exports = merge(commonConfig, {
     mode: 'development',
@@ -7,4 +7,4 @@ module.exports = merge(commonConfig, {
     devServer: {
         contentBase: './dist'
     }
-});
+})

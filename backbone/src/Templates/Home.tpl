@@ -1,0 +1,1 @@
+<inspirance-home />
