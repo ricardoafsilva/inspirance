@@ -6,9 +6,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src', 'index.js'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
-        filename: '[name].[contenthash].js',
+        filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
@@ -23,22 +23,17 @@ module.exports = {
             chunkFilename: '[id].[contenthash].css',
         })
     ],
+    resolve: {
+        extensions: ['.js', '.ts', '.tsx']
+    },
     module: {
-        rules: [
-            {
-                test: /\.s[ac]ss$/i,
-                use: [
-                    process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader',
-                ],
+        rules: [{
+                test: /\.html/,
+                use: ['html-loader']
             },
             {
-                test: /\.(js|jsx)$/,
-                exclude: /[\\/]node_modules[\\/]/,
-                use: {
-                    loader: 'babel-loader',
-                },
+                test: /\.tsx?$/,
+                use: ['ts-loader']
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,
@@ -46,6 +41,14 @@ module.exports = {
                 options: {
                     name: process.env.NODE_ENV !== 'production' ? '[path][name].[ext]' : '[contenthash].[ext]',
                 }
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader',
+                ],
             },
         ]
     }

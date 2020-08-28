@@ -1,8 +1,8 @@
-@import '../../patterns';
+@use '../../patterns';
 
 p {
     text-align: left;
-    color: $white;
+    color: patterns.$white;
     margin: 0 auto 15px;
 
     &.small {

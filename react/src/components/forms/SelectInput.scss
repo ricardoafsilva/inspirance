@@ -1,11 +1,11 @@
-@import '../../patterns';
+@use '../../patterns';
 
 .select-input-container {
     position: relative;
     height: 48px;
     padding: 0 14px 0 0;
     border-radius: 8px;
-    background-color: $white;
+    background-color: patterns.$white;
     overflow: hidden;
 
     &.open {
@@ -35,21 +35,21 @@
     }
 
     .paragraph {
-        color: $grayChateau;
+        color: patterns.$grayChateau;
         line-height: 48px;
         margin: 0;
         padding: 0 0 0 14px;
 
         &.selected {
-            color: $white;
-            font-weight: $fwSemiBold;
+            color: patterns.$white;
+            font-weight: patterns.$fwSemiBold;
             border-radius: 0 8px 8px 0;
             background: linear-gradient(88.28deg, #DD019C 0%, #2A06DA 100%);
         }
 
         &:not(.selected):not(.placeholder) {
             &:hover {
-                font-weight: $fwSemiBold;
+                font-weight: patterns.$fwSemiBold;
                 cursor: pointer;
             }
         }

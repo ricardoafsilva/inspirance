@@ -1,11 +1,11 @@
 define([
-    "underscore",
-    "jquery",
-    "Views/Home",
+    'underscore',
+    'jquery',
+    'Views/Home',
 ], (_, $, HomeView) => {
     const homeView = new(HomeView())({
-        el: $("#main")
-    });
+        el: $('#main')
+    })
 
-    return this;
-});
+    return this
+})

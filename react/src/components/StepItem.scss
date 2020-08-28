@@ -1,4 +1,4 @@
-@import '../patterns';
+@use '../patterns';
 
 .step-item {
     display: flex;
@@ -6,12 +6,12 @@
     justify-content: center;
     height: 50px;
     width: 50px;
-    border: 2px solid $rose;
+    border: 2px solid patterns.$rose;
     border-radius: 50%;
     box-sizing: border-box;
 
     &.active {
-        box-shadow: 0 0 15px 0 $rose;
+        box-shadow: 0 0 15px 0 patterns.$rose;
     }
 
     &.disabled {
@@ -23,10 +23,10 @@
     }
 
     &.done {
-        border-color: $deluge;
+        border-color: patterns.$deluge;
 
         .icon-wrapper {
-            background-color: $deluge;
+            background-color: patterns.$deluge;
         }
     }
 
@@ -36,7 +36,7 @@
         justify-content: center;
         width: 40px;
         height: 40px;
-        background-color: $rose;
+        background-color: patterns.$rose;
         border-radius: 50%;
     }
 

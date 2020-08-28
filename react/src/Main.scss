@@ -1,12 +1,12 @@
-@import './patterns';
+@use './patterns';
 
 * {
     font-family: 'Montserrat', sans-serif;
-    color: $white;
+    color: patterns.$white;
 }
 
 body {
-    background-color: $blackRussian;
+    background-color: patterns.$blackRussian;
 }
 
 .main-container {

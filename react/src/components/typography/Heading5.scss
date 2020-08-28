@@ -1,11 +1,11 @@
-@import '../../patterns';
+@use '../../patterns';
 
 h5 {
     font-size: 18px;
-    font-weight: $fwMedium;
+    font-weight: patterns.$fwMedium;
     line-height: 22px;
     text-align: center;
-    color: $white;
+    color: patterns.$white;
     margin: 0 auto 45px;
 
     &.left {

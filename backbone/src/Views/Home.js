@@ -1,23 +1,24 @@
 define([
-    "underscore",
-    "backbone",
-    "tpl!../Templates/Home.tpl"
+    'underscore',
+    'backbone',
+    'tpl!../Templates/Home.tpl',
+    '../../../../react/dist/bundle'
 ], (_, Backbone, homeTpl) => {
-    return (selectedRooms) => {
+    return () => {
         const HomeView = Backbone.View.extend({
-            tagName: "div",
+            el: 'main',
 
             initialize: function() {
-                _.bindAll(this, "render");
+                this.render()
             },
 
             render: function() {
                 this.$el.html(
                     homeTpl()
-                );
+                )
             },
-        });
+        })
 
-        return HomeView;
-    };
-});
+        return HomeView
+    }
+})

@@ -1,7 +1,7 @@
-@import '../../patterns';
+@use '../../patterns';
 
 h1 {
     text-align: center;
-    color: $white;
+    color: patterns.$white;
     margin: 0 auto 45px;
 }
