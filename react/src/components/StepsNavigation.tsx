@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-import StepItem from './StepItem.jsx'
+import StepItem from './StepItem.tsx'
 
 import "./StepsNavigation.scss"
 

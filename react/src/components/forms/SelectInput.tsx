@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import cx from 'classnames'
 
 import iconArrow from './../../../public/images/icon-gray-arrow.png'
-import Paragraph from '../typography/Paragraph.jsx'
+import Paragraph from '../typography/Paragraph.tsx'
 
 import './SelectInput.scss'
 

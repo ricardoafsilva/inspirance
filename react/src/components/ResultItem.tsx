@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
 
-import ResultModal from './ResultModal.jsx'
+import ResultModal from './ResultModal.tsx'
 
 import './ResultItem.scss'
 

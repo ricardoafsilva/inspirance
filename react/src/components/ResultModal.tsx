@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
 
-import Heading5 from './typography/Heading5.jsx'
+import Heading5 from './typography/Heading5.tsx'
 import iconExternalLink from './../../public/images/icon-external-link.png'
 import iconCloseRound from './../../public/images/icon-close-round.png'
 

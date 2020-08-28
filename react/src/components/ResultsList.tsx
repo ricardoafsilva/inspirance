@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
 
-import ResultItem from './ResultItem.jsx'
+import ResultItem from './ResultItem.tsx'
 
 import './ResultsList.scss'
 

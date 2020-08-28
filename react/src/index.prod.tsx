@@ -1,9 +1,9 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
-import Home from './containers/Home.jsx'
+import Home from './containers/Home.tsx'
 
-import * as styles from './Main.scss'
+import styles from './Main.scss'
 
 export default class CustomHome extends HTMLElement {
     createHome() {
