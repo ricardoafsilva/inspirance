@@ -237,13 +237,13 @@ class ResultsContainer extends Component {
 
     render() {
         return (
-            <>
+            <div className='main-results-container'>
                 <div className='steps-options-containers results'>
                     <Paragraph small>Inspirations for:</Paragraph>
                     <Paragraph medium>Change query</Paragraph>
                 </div>
                 <ResultsList items={this.state.items} />
-            </>
+            </div>
         )
     }
 }
