@@ -1,34 +1,36 @@
-import React, { Component } from 'react'
+import React, { Component, MouseEvent } from 'react'
 import cx from 'classnames'
 
-import iconArrow from './../../../public/images/icon-gray-arrow.png'
 import Paragraph from '../typography/Paragraph.tsx'
+
+import iconArrow from './../../../public/images/icon-gray-arrow.png'
 
 import './SelectInput.scss'
 
-class SelectInput extends Component {
-    constructor(props) {
-        super(props)
+type Props = {
+    items: string[],
+    getSelected?: (selectedRoom: string) => void,
+}
 
-        this.state = {
-            open: false,
-            selected: 0
-        }
-    }
+type State = {
+    open: boolean,
+    selected: number,
+}
 
-    static defaultProps = {
-        className: '',
-        items: []
+class SelectInput extends Component<Props, State> {
+    state: State = {
+        open: false,
+        selected: 0
     }
 
     getSelected = () => {
         return this.props.items[this.state.selected]
     }
 
-    handleClick = (index) => (e) => {
+    handleClick = (index: number) => (e: MouseEvent) => {
         e.stopPropagation()
 
-        let isDifferentSelected = index !== this.state.selected
+        let isDifferentSelected: boolean = index !== this.state.selected
 
         this.setState({
             open: !this.state.open,
@@ -37,13 +39,18 @@ class SelectInput extends Component {
     }
 
     render() {
-        let props = this.props
-        let items = props.items.map((item, index) => {
-            let selected = index === this.state.selected
+        let propItems: string[] = this.props.items
+        let items: JSX.Element[] = propItems.map((item: string, index: number) => {
+            let selected: boolean = index === this.state.selected
 
-            return <Paragraph className={selected && 'selected'} onClick={this.handleClick(index)} key={`select-input-${index}`}>{item}</Paragraph>
+            return <Paragraph
+                className={selected ? 'selected' : ''}
+                onClick={this.handleClick(index)}
+                key={`select-input-${index}`}>
+                    {item}
+                </Paragraph>
         })
-        items = [<Paragraph className='placeholder' onClick={this.handleClick(this.state.selected)} key='select-input-first'>{props.items[this.state.selected]}</Paragraph>, ...items]
+        items = [<Paragraph className='placeholder' onClick={this.handleClick(this.state.selected)} key='select-input-first'>{propItems[this.state.selected]}</Paragraph>, ...items]
 
         return (
             <div className={cx('select-input-container', this.state.open && 'open')}>

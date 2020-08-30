@@ -6,7 +6,7 @@ import ResultsList from './ResultsList.tsx'
 
 import './ResultsContainer.scss'
 
-const defaultItems = [{
+const defaultItems: ResultItemInterface[] = [{
         "kind": "customsearch#result",
         "title": "19+ The 30-Second Trick for Rustic Industrial Decor ...",
         "htmlTitle": "19+ The 30-Second Trick for Rustic <b>Industrial</b> Decor ...",
@@ -208,39 +208,35 @@ const defaultItems = [{
     }
 ]
 
-class ResultsContainer extends Component {
-    constructor(props) {
-        super(props)
+type State = {
+    items: ResultItemInterface[],
+}
 
-        this.state = {
-            items: defaultItems
-        }
+class ResultsContainer extends Component<{}, State> {
+    state: State = {
+        items: defaultItems
     }
 
-    static defaultProps = {
-        className: '',
-    }
-
-    setResultsItems = (event) => {
+    setResultsItems = (e: any) => {
         this.setState({
-            items: event.detail.results
+            items: e.detail.results
         })
     }
 
     componentDidMount() {
-        window.addEventListener('setResultsItems', this.setResultsItems)
+        window.addEventListener('setResultsItems', (e) => this.setResultsItems(e))
     }
 
     componentWillUnmount() {
-        window.removeEventListener('setResultsItems', this.setResultsItems)
+        window.removeEventListener('setResultsItems', (e) => this.setResultsItems(e))
     }
 
     render() {
         return (
             <div className='main-results-container'>
                 <div className='steps-options-containers results'>
-                    <Paragraph small>Inspirations for:</Paragraph>
-                    <Paragraph medium>Change query</Paragraph>
+                    <Paragraph size='small'>Inspirations for:</Paragraph>
+                    <Paragraph size='medium'>Change query</Paragraph>
                 </div>
                 <ResultsList items={this.state.items} />
             </div>

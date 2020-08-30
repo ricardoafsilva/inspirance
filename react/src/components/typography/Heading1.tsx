@@ -1,23 +1,17 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
 import cx from 'classnames'
 
-import "./Heading1.scss"
+import './Heading1.scss'
 
-class Heading1 extends Component {
-    constructor(props) {
-        super(props)
-    }
+type Props = {
+    className?: string,
+}
 
-    static defaultProps = {
-        className: ''
-    }
-
+class Heading1 extends Component<Props> {
     render() {
-        let props = this.props
-        
         return (
-            <h1 className={cx('heading1', props.className)}>{props.children || ''}</h1>
+            <h1 className={cx('heading1', this.props.className)}>{this.props.children}</h1>
         )
     }
 }

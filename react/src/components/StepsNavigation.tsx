@@ -1,20 +1,30 @@
-import React, { Component } from "react"
+import React, { Component, ReactElement } from 'react'
 
 import StepItem from './StepItem.tsx'
 
-import "./StepsNavigation.scss"
+import './StepsNavigation.scss'
 
-class StepsNavigation extends Component {
-    constructor(props) {
-        super(props)
+type Props = typeof StepsNavigation.defaultProps & {
+    currentStep: number,
+    handleChange: (index: number) => void,
+    steps?: StepInterface[],
+}
 
-        this.state = {
-            currentStep: 0
-        }
+type State = {
+    currentStep: number,
+}
+
+class StepsNavigation extends Component<Props, State> {
+    static defaultProps = {
+        currentStep: 0,
     }
 
-    handleClick = (index) => (e) => {
-        this.props.handleChange(index, e)
+    state: State = {
+        currentStep: 0,
+    }
+
+    handleClick = (index: number) => {
+        this.props.handleChange(index)
 
         this.setState({
             currentStep: index
@@ -22,15 +32,15 @@ class StepsNavigation extends Component {
     }
 
     render() {
-        const stepsList = this.props.steps.map((step, index) => {
-            let currentStep = this.props.currentStep || this.state.currentStep,
-                isActive = index === currentStep,
-                isDone = index < currentStep
+        const stepsList: ReactElement[] = this.props.steps?.map((step: StepInterface, index: number) => {
+            let currentStep: number = this.props.currentStep || this.state.currentStep,
+                isActive: boolean = index === currentStep,
+                isDone: boolean = index < currentStep
 
             return <StepItem
                 className={isActive ? 'active' : isDone ? 'done' : 'disabled'}
                 icon={step.icon}
-                onClick={this.handleClick(index)}
+                onClick={() => this.handleClick(index)}
                 key={`step-item-${index}`}/>
         })
 

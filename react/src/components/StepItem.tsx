@@ -1,21 +1,18 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
 import cx from 'classnames'
 import iconRooms from './../../public/images/icon-rooms.png'
 
-import "./StepItem.scss"
+import './StepItem.scss'
 
-class StepItem extends Component {
-    constructor(props) {
-        super(props)
+type Props = typeof StepItem.defaultProps & {
+    className?: string,
+    icon: string,
+    onClick?: (e: React.MouseEvent) => void,
+}
 
-        this.state = {
-
-        }
-    }
-
+class StepItem extends Component<Props> {
     static defaultProps = {
-        className: '',
         icon: iconRooms
     }
 

@@ -1,26 +1,23 @@
-import React, { Component } from "react"
+import React, { Component, MouseEvent } from 'react'
 
 import cx from 'classnames'
 
-import "./Paragraph.scss"
+import './Paragraph.scss'
 
-class Paragraph extends Component {
-    constructor(props) {
-        super(props)
-    }
+type Props = {
+    className?: string,
+    children?: any,
+    onClick?: (e: React.MouseEvent) => void,
+    size?: 'small' | 'medium',
+}
 
-    static defaultProps = {
-        className: ''
-    }
-
+class Paragraph extends Component<Props> {
     render() {
-        let props = this.props
-
         return (
             <p
-                className={cx('paragraph', props.className, props.small && 'small')}
-                {...(this.props.onClick ? {onClick: this.props.onClick} : {})}>
-                {props.children || ''}
+                className={cx('paragraph', this.props.className, this.props.size)}
+                {...(this.props.onClick ? { onClick: this.props.onClick } : {})}>
+                {this.props.children}
             </p>
         )
     }

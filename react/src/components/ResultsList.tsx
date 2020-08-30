@@ -1,24 +1,24 @@
-import React, { Component } from 'react'
+import React, { Component, MouseEvent } from 'react'
 import cx from 'classnames'
 
 import ResultItem from './ResultItem.tsx'
 
 import './ResultsList.scss'
 
-class ResultsList extends Component {
-    constructor(props) {
-        super(props)
+type Props = {
+    items: ResultItemInterface[],
+}
 
-        this.state = {
-            selected: null
-        }
+type State = {
+    selected: number | null,
+}
+
+class ResultsList extends Component<Props, State> {
+    state: State = {
+        selected: null
     }
 
-    static defaultProps = {
-        className: '',
-    }
-
-    handleClick = (index) => (e) => {
+    handleClick = (index: number) => (e: MouseEvent) => {
         e.stopPropagation()
 
         this.setState({
@@ -27,11 +27,14 @@ class ResultsList extends Component {
     }
 
     render() {
-        let props = this.props
-        let items = props.items.map((item, index) => {
-            let selected = index === this.state.selected
+        let items: JSX.Element[] = this.props.items.map((item: ResultItemInterface, index: number) => {
+            let selected: boolean = index === this.state.selected
 
-            return <ResultItem className={selected && 'selected'} data={item} onClick={this.handleClick(index)} key={`result-item-${index}`} />
+            return <ResultItem
+                className={selected ? 'selected' : ''}
+                data={item}
+                onClick={this.handleClick(index)}
+                key={`result-item-${index}`} />
         })
 
         return (

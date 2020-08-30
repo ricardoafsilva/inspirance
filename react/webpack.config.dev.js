@@ -5,6 +5,7 @@ const {
 const commonConfig = require('./webpack.config.common')
 
 module.exports = merge(commonConfig, {
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {

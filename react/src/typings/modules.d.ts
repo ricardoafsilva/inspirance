@@ -1,4 +1,5 @@
-// scss.d.ts
+declare module 'classnames'
+declare module '*.png'
 declare module '*.css' {
     const content: { [className: string]: string; };
     export default content;

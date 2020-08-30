@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, MouseEvent } from 'react'
 import cx from 'classnames'
 
 import iconHome from './../../public/images/icon-home.png'
@@ -12,7 +12,7 @@ import iconFavoriteActive from './../../public/images/icon-favorite-active.png'
 
 import './Menu.scss'
 
-const menuItems = [
+const menuItems: MenuItemInterface[] = [
     {
         title: 'Home',
         iconRegular: iconHome,
@@ -39,16 +39,16 @@ const menuItems = [
     }
 ]
 
-class Menu extends Component {
-    constructor(props) {
-        super(props)
+type State = {
+    selected: number,
+}
 
-        this.state = {
-            selected: 0
-        }
+class Menu extends Component<{}, State> {
+    state: State = {
+        selected: 0
     }
 
-    handleClick = (index, url) => (e) => {
+    handleClick = (index: number, url: string) => (e: MouseEvent) => {
         e.stopPropagation()
 
         this.setState({
@@ -57,8 +57,8 @@ class Menu extends Component {
     }
 
     render() {
-        const items = menuItems.map((item, index) => {
-            let currentActive = index === this.state.selected
+        const items: JSX.Element[] = menuItems.map((item: MenuItemInterface, index: number) => {
+            let currentActive: boolean = index === this.state.selected
 
             return <li className={cx('menu-item', currentActive && 'active')} onClick={this.handleClick(index, item.url)} key={`menu-item-${index}`}>
                 <img className='item-icon' src={currentActive ? item.iconActive : item.iconRegular} />

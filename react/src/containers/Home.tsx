@@ -13,12 +13,7 @@ import iconStyles from './../../public/images/icon-styles.png'
 
 import './Home.scss'
 
-interface Step {
-    title: string;
-    icon: string;
-}
-
-const Steps: Step[] = [
+const steps: StepInterface[] = [
     {
         title: 'Rooms',
         icon: iconRooms,
@@ -34,32 +29,29 @@ const Steps: Step[] = [
 ]
 
 type State = {
-    currentStep: number
+    currentStep: number,
 }
 
-class Home extends Component<State> {
+class Home extends Component<{}, State> {
     state: State = {
         currentStep: 0,
     }
 
-    handleChange(index, e) {
+    handleChange = (index: number) => {
         this.setState({
             currentStep: index
         })
     }
 
     renderStepContainer = () => {
-        let currentStep = this.state.currentStep,
-            stepContainer
-
-        currentStep === 0 ?
-            stepContainer = <RoomsContainer handleChange={this.handleChange.bind(this)} />
-        : currentStep === 1 ?
-            stepContainer = <StylesContainer handleChange={this.handleChange.bind(this)} />
-        :
-            stepContainer = <ResultsContainer />
-
-        return stepContainer
+        switch (this.state.currentStep) {
+            default:
+                return <RoomsContainer handleChange={this.handleChange} />
+            case 1:
+                return <StylesContainer handleChange={this.handleChange} />
+            case 2:
+                return <ResultsContainer />
+        }
     }
 
     render() {
@@ -67,7 +59,7 @@ class Home extends Component<State> {
             <div>
                 <Menu />
                 <Heading1>How do you want to be inspired today?</Heading1>
-                <StepsNavigation currentStep={this.state.currentStep} steps={Steps} handleChange={this.handleChange.bind(this)}/>
+                <StepsNavigation currentStep={this.state.currentStep} steps={steps} handleChange={this.handleChange} />
                 {this.renderStepContainer()}
             </div>
         )

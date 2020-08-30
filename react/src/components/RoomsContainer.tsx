@@ -27,20 +27,20 @@ const defaultRooms = [
     'Wine cellar'
 ]
 
-class RoomsContainer extends Component {
-    constructor(props) {
-        super(props)
+type Props = {
+    handleChange: (index: number) => void,
+}
 
-        this.state = {
-            selectItems: defaultRooms
-        }
+type State = {
+    selectItems: string[],
+}
+
+class RoomsContainer extends Component<Props, State> {
+    state: State = {
+        selectItems: defaultRooms
     }
 
-    static defaultProps = {
-        className: '',
-    }
-
-    triggerCustomEvent(selectedRoom) {
+    triggerCustomEvent = (selectedRoom: string) => {
         window.dispatchEvent(
             new CustomEvent('onRoomTypeChange', {
                 detail: {
@@ -52,25 +52,25 @@ class RoomsContainer extends Component {
         this.props.handleChange(1)
     }
 
-    setSelectItems = (event) => {
+    setSelectItems = (e: any) => {
         this.setState({
-            selectItems: event.detail.rooms
+            selectItems: e.detail.rooms
         })
     }
 
     componentDidMount() {
-        window.addEventListener('setRoomsItems', this.setSelectItems)
+        window.addEventListener('setRoomsItems', (e) => this.setSelectItems(e))
     }
 
     componentWillUnmount() {
-        window.removeEventListener('setRoomsItems', this.setSelectItems)
+        window.removeEventListener('setRoomsItems', (e) => this.setSelectItems(e))
     }
 
     render() {
         return (
             <div className='steps-options-containers rooms'>
-                <Paragraph small>Select a room:</Paragraph>
-                <SelectInput items={this.state.selectItems} getSelected={this.triggerCustomEvent.bind(this)} />
+                <Paragraph size='small'>Select a room:</Paragraph>
+                <SelectInput items={this.state.selectItems} getSelected={this.triggerCustomEvent} />
             </div>
         )
     }
