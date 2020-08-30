@@ -2,10 +2,10 @@
 
 h5 {
     font-size: 18px;
-    font-weight: patterns.$fwMedium;
+    font-weight: $fwMedium;
     line-height: 22px;
     text-align: center;
-    color: patterns.$white;
+    color: $white;
     margin: 0 auto 45px;
 
     &.left {

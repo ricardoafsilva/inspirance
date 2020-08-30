@@ -3,7 +3,6 @@ const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     output: {
@@ -17,10 +16,6 @@ module.exports = {
             inject: true,
             template: path.resolve(__dirname, 'public', 'index.html'),
         }),
-        new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
-            chunkFilename: '[id].[contenthash].css',
-        })
     ],
     resolve: {
         extensions: ['.js', '.ts', '.tsx', '.scss']
@@ -42,13 +37,15 @@ module.exports = {
                 }
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.s(a|c)ss$/,
                 use: [
-                    process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader',
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                    },
+                    'sass-loader'
                 ],
-            },
+            }
         ]
     }
 }

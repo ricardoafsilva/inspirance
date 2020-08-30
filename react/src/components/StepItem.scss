@@ -6,12 +6,12 @@
     justify-content: center;
     height: 50px;
     width: 50px;
-    border: 2px solid patterns.$rose;
+    border: 2px solid $rose;
     border-radius: 50%;
     box-sizing: border-box;
 
     &.active {
-        box-shadow: 0 0 15px 0 patterns.$rose;
+        box-shadow: 0 0 15px 0 $rose;
     }
 
     &.disabled {
@@ -23,10 +23,10 @@
     }
 
     &.done {
-        border-color: patterns.$deluge;
+        border-color: $deluge;
 
         .icon-wrapper {
-            background-color: patterns.$deluge;
+            background-color: $deluge;
         }
     }
 
@@ -36,7 +36,7 @@
         justify-content: center;
         width: 40px;
         height: 40px;
-        background-color: patterns.$rose;
+        background-color: $rose;
         border-radius: 50%;
     }
 

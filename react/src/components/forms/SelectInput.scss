@@ -5,7 +5,7 @@
     height: 48px;
     padding: 0 14px 0 0;
     border-radius: 8px;
-    background-color: patterns.$white;
+    background-color: $white;
     overflow: hidden;
 
     &.open {
@@ -35,21 +35,21 @@
     }
 
     .paragraph {
-        color: patterns.$grayChateau;
+        color: $grayChateau;
         line-height: 48px;
         margin: 0;
         padding: 0 0 0 14px;
 
         &.selected {
-            color: patterns.$white;
-            font-weight: patterns.$fwSemiBold;
+            color: $white;
+            font-weight: $fwSemiBold;
             border-radius: 0 8px 8px 0;
             background: linear-gradient(88.28deg, #DD019C 0%, #2A06DA 100%);
         }
 
         &:not(.selected):not(.placeholder) {
             &:hover {
-                font-weight: patterns.$fwSemiBold;
+                font-weight: $fwSemiBold;
                 cursor: pointer;
             }
         }

@@ -1,3 +1,4 @@
+
 import React, { Component, ReactElement } from 'react'
 
 import StepItem from './StepItem.tsx'
@@ -32,7 +33,7 @@ class StepsNavigation extends Component<Props, State> {
     }
 
     render() {
-        const stepsList: ReactElement[] = this.props.steps?.map((step: StepInterface, index: number) => {
+        const stepsList = this.props.steps?.map((step: StepInterface, index: number) => {
             let currentStep: number = this.props.currentStep || this.state.currentStep,
                 isActive: boolean = index === currentStep,
                 isDone: boolean = index < currentStep

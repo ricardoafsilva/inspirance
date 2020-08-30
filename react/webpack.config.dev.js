@@ -11,5 +11,5 @@ module.exports = merge(commonConfig, {
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
         port: 8888
-    }
+    },
 })

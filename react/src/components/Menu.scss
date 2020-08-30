@@ -5,7 +5,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: patterns.$blackPearl;
+    background-color: $blackPearl;
     box-shadow: 0 -2px 15px 0 rgba(0,0,0,0.3);
     z-index: 15;
 
@@ -27,8 +27,8 @@
 
         &.active {
             .item-title {
-                color: patterns.$rose;
-                font-weight: patterns.$fwSemiBold;
+                color: $rose;
+                font-weight: $fwSemiBold;
             }
         }
 
@@ -45,7 +45,7 @@
     .item-title {
         font-size: 12px;
         line-height: 15px;
-        color: patterns.$white;
+        color: $white;
         margin: 2px 0 0;
     }
 }
