@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import retargetEvents from 'react-shadow-dom-retarget-events'
 import Home from './containers/Home.tsx'
 
-import * as styles from './Main.scss'
+import * as styles from './MainProd.scss'
 
 class HomeProd extends HTMLElement {
     connectedCallback() {

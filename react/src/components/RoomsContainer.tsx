@@ -6,7 +6,7 @@ import SelectInput from './forms/SelectInput.tsx'
 
 import './RoomsContainer.scss'
 
-const defaultRooms = [
+const defaultRooms: string[] = [
     'Any room',
     'Attic',
     'Balcony',

@@ -14,10 +14,7 @@ module.exports = merge(commonConfig, {
     module: {
         rules: [{
                 test: /\.(png|jpe?g|gif)$/i,
-                loader: 'file-loader',
-                options: {
-                    name: '[contenthash].[ext]',
-                }
+                loader: 'base64-inline-loader?limit=1000&name=[name].[ext]',
             },
             {
                 test: /\.s(a|c)ss$/,
