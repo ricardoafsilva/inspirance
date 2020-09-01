@@ -9,4 +9,4 @@ ReactDOM.render(
         <Home />
     </div>,
     document.getElementById('root')
-);
+)

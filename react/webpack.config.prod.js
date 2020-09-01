@@ -1,14 +1,32 @@
+const path = require('path')
 const {
     merge
 } = require('webpack-merge')
 const commonConfig = require('./webpack.config.common')
-const path = require('path')
 
 module.exports = merge(commonConfig, {
-    entry: path.resolve(__dirname, 'src', 'index.tsx'),
+    entry: path.resolve(__dirname, 'src', 'index.prod.js'),
+    mode: 'production',
+    devtool: 'source-map',
     output: {
         libraryTarget: 'amd'
     },
-    mode: 'production',
-    devtool: 'source-map',
+    module: {
+        rules: [{
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[contenthash].[ext]',
+                }
+            },
+            {
+                test: /\.s(a|c)ss$/,
+                use: [
+                    'to-string-loader',
+                    'postcss-loader',
+                    'sass-loader'
+                ],
+            }
+        ]
+    }
 })

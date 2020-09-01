@@ -1,7 +1,7 @@
 define([
     'underscore',
     'backbone',
-    'tpl!../Templates/Home.tpl',
+    'tpl!../Templates/HomeTemplate.tpl',
     '../../../../react/dist/bundle'
 ], (_, Backbone, homeTpl) => {
     return () => {

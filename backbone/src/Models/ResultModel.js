@@ -1,7 +1,7 @@
 define(['backbone'], function(Backbone) {
-    const Result = Backbone.Model.extend({
+    const ResultModel = Backbone.Model.extend({
         defaults: {
-            title: 'Room result',
+            title: 'Inspiration result',
             link: '/',
             image: {
                 contextLink: '/',
@@ -14,5 +14,5 @@ define(['backbone'], function(Backbone) {
         },
     })
 
-    return Result
+    return ResultModel
 })

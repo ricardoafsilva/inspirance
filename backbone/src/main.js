@@ -6,9 +6,16 @@ requirejs.config({
         underscore: '../lib/underscore-min'
     },
     shim: {
-        'underscore': {
-            exports: '_'
-        }
+        jquery: {
+            exports: '$'
+        },
+        underscore: {
+            exports: '_',
+        },
+        backbone: {
+            exports: 'Backbone',
+            deps: ['jquery', 'underscore']
+        },
     }
 });
 

@@ -1,10 +1,10 @@
 define(['backbone'], function(Backbone) {
-    const Room = Backbone.Model.extend({
+    const StyleModel = Backbone.Model.extend({
         defaults: {
             index: 0,
-            title: 'Room'
+            title: 'Style'
         },
     })
 
-    return Room
+    return StyleModel
 })

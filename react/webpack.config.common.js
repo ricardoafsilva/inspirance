@@ -22,6 +22,9 @@ module.exports = {
     },
     module: {
         rules: [{
+                test: /\.js$/,
+                loader: ['babel-loader'],
+            }, {
                 test: /\.html/,
                 use: ['html-loader']
             },
@@ -29,23 +32,6 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: ['ts-loader']
             },
-            {
-                test: /\.(png|jpe?g|gif)$/i,
-                loader: 'file-loader',
-                options: {
-                    name: process.env.NODE_ENV !== 'production' ? '[path][name].[ext]' : '[contenthash].[ext]',
-                }
-            },
-            {
-                test: /\.s(a|c)ss$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                    },
-                    'sass-loader'
-                ],
-            }
         ]
     }
 }

@@ -1,4 +1,4 @@
 <div>
     <h1>teste</h1>
-    <inspirance-home />
+    <inspirance-main />
 </div>
