@@ -1,5 +1,7 @@
 .git
 /dist/
 /node_modules/
+/core/dist/
+/core/node_modules/
 /react/dist/
 /react/node_modules/
