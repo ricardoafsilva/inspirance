@@ -1,7 +1,7 @@
 import React, { Component, MouseEvent } from 'react'
 import cx from 'classnames'
 
-import Paragraph from '../typography/Paragraph.tsx'
+import Paragraph from '../Typography/Paragraph.tsx'
 
 import iconArrow from './../../../public/images/icon-gray-arrow.png'
 

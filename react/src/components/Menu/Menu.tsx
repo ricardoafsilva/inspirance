@@ -1,14 +1,14 @@
 import React, { Component, MouseEvent } from 'react'
 import cx from 'classnames'
 
-import iconHome from './../../public/images/icon-home.png'
-import iconHomeActive from './../../public/images/icon-home-active.png'
-import iconSearch from './../../public/images/icon-search.png'
-import iconSearchActive from './../../public/images/icon-search-active.png'
-import iconRandom from './../../public/images/icon-random.png'
-import iconRandomActive from './../../public/images/icon-random-active.png'
-import iconFavorite from './../../public/images/icon-favorite.png'
-import iconFavoriteActive from './../../public/images/icon-favorite-active.png'
+import iconHome from '../../../public/images/icon-home.png'
+import iconHomeActive from '../../../public/images/icon-home-active.png'
+import iconSearch from '../../../public/images/icon-search.png'
+import iconSearchActive from '../../../public/images/icon-search-active.png'
+import iconRandom from '../../../public/images/icon-random.png'
+import iconRandomActive from '../../../public/images/icon-random-active.png'
+import iconFavorite from '../../../public/images/icon-favorite.png'
+import iconFavoriteActive from '../../../public/images/icon-favorite-active.png'
 
 import './Menu.scss'
 

@@ -1,9 +1,9 @@
 import React, { Component, MouseEvent } from 'react'
 import cx from 'classnames'
 
-import Heading5 from './typography/Heading5.tsx'
-import iconExternalLink from './../../public/images/icon-external-link.png'
-import iconCloseRound from './../../public/images/icon-close-round.png'
+import Heading5 from '../Typography/Heading5.tsx'
+import iconExternalLink from '../../../public/images/icon-external-link.png'
+import iconCloseRound from '../../../public/images/icon-close-round.png'
 
 import './ResultModal.scss'
 

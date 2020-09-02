@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
-import Heading1 from '../components/typography/Heading1.tsx'
-import Menu from '../components/Menu.tsx'
-import ResultsContainer from '../components/ResultsContainer.tsx'
-import RoomsContainer from '../components/RoomsContainer.tsx'
-import StepsNavigation from '../components/StepsNavigation.tsx'
-import StylesContainer from '../components/StylesContainer.tsx'
+import Heading1 from '../components/Typography/Heading1.tsx'
+import Menu from '../components/Menu/Menu.tsx'
+import ResultsContainer from '../components/Results/ResultsContainer.tsx'
+import RoomsContainer from '../components/Rooms/RoomsContainer.tsx'
+import StepsNavigation from '../components/Steps/StepsNavigation.tsx'
+import StylesContainer from '../components/Styles/StylesContainer.tsx'
 
 import iconRooms from './../../public/images/icon-rooms.png'
 import iconResults from './../../public/images/icon-results.png'

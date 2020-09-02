@@ -1,16 +1,16 @@
 {
+    "author": "",
+    "description": "2020 onboarding project.",
+    "keywords": [],
+    "license": "ISC",
+    "main": "index.js",
     "name": "inspirance-react",
     "version": "1.0.0",
-    "description": "2020 onboarding project.",
-    "main": "index.js",
     "scripts": {
         "build": "webpack --config=webpack.config.prod.js",
         "build-dev": "webpack --config=webpack.config.dev.js",
         "start": "webpack-dev-server --config=webpack.config.dev.js --open"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.11.1",
         "@babel/plugin-proposal-class-properties": "^7.10.4",

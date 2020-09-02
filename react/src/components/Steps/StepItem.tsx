@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import cx from 'classnames'
-import iconRooms from './../../public/images/icon-rooms.png'
+import iconRooms from '../../../public/images/icon-rooms.png'
 
 import './StepItem.scss'
 

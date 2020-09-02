@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
 
-import Paragraph from './typography/Paragraph.tsx'
-import SelectInput from './forms/SelectInput.tsx'
+import Paragraph from '../Typography/Paragraph.tsx'
+import SelectInput from '../Forms/SelectInput.tsx'
 
 import './StylesContainer.scss'
 
