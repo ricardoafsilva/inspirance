@@ -33,7 +33,8 @@ const defaultStyles: string[] = [
 ]
 
 type Props = {
-    handleChange: (index: number) => void,
+    handleChange: (index: number, selectedStyle: object) => void,
+    selectedStyle: string
 }
 
 type State = {
@@ -45,16 +46,8 @@ class StylesContainer extends Component<Props, State> {
         selectItems: defaultStyles
     }
 
-    triggerCustomEvent = (selectedStyle: string) => {
-        window.dispatchEvent(
-            new CustomEvent('onStyleTypeChange', {
-                detail: {
-                    selectedStyle
-                }
-            })
-        )
-
-        this.props.handleChange(2)
+    getSelected = (selectedStyle: string) => {
+        this.props.handleChange(2, {selectedStyle: selectedStyle})
     }
 
     setSelectItems = (e: any) => {
@@ -75,7 +68,7 @@ class StylesContainer extends Component<Props, State> {
         return (
             <div className='steps-options-containers rooms'>
                 <Paragraph size='small'>Select a style:</Paragraph>
-                <SelectInput items={this.state.selectItems} getSelected={this.triggerCustomEvent} />
+                <SelectInput items={this.state.selectItems} selectedItem={this.props.selectedStyle} getSelected={this.getSelected} />
             </div>
         )
     }

@@ -10,6 +10,7 @@ import './SelectInput.scss'
 type Props = {
     items: string[],
     getSelected?: (selectedRoom: string) => void,
+    selectedItem?: string | number
 }
 
 type State = {
@@ -18,9 +19,21 @@ type State = {
 }
 
 class SelectInput extends Component<Props, State> {
+    getSelectedFromProps = () => {
+        let selectedFromProps = this.props.selectedItem
+
+        if(selectedFromProps) {
+            if(typeof selectedFromProps == 'number') {
+                return selectedFromProps
+            } else {
+                return this.props.items.indexOf(selectedFromProps)
+            }
+        }
+    }
+    
     state: State = {
         open: false,
-        selected: 0
+        selected: this.getSelectedFromProps() || 0
     }
 
     getSelected = () => {

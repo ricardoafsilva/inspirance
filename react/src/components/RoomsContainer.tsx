@@ -28,7 +28,8 @@ const defaultRooms: string[] = [
 ]
 
 type Props = {
-    handleChange: (index: number) => void,
+    handleChange: (index: number, selectedRoom: object) => void,
+    selectedRoom: string,
 }
 
 type State = {
@@ -40,16 +41,8 @@ class RoomsContainer extends Component<Props, State> {
         selectItems: defaultRooms
     }
 
-    triggerCustomEvent = (selectedRoom: string) => {
-        window.dispatchEvent(
-            new CustomEvent('onRoomTypeChange', {
-                detail: {
-                    selectedRoom
-                }
-            })
-        )
-
-        this.props.handleChange(1)
+    getSelected = (selectedRoom: string) => {
+        this.props.handleChange(1, {selectedRoom: selectedRoom})
     }
 
     setSelectItems = (e: any) => {
@@ -70,7 +63,7 @@ class RoomsContainer extends Component<Props, State> {
         return (
             <div className='steps-options-containers rooms'>
                 <Paragraph size='small'>Select a room:</Paragraph>
-                <SelectInput items={this.state.selectItems} getSelected={this.triggerCustomEvent} />
+                <SelectInput items={this.state.selectItems} selectedItem={this.props.selectedRoom} getSelected={this.getSelected} />
             </div>
         )
     }

@@ -9,12 +9,45 @@ define([
         const HomeView = Backbone.View.extend({
             el: 'main',
 
+            /*rooms,
+            styles,
+            results,*/
+
             initialize: function() {
-                Core.default.getData().then((response) => {
-                    console.log(response)
-                    this.render()
-                })
+                // this.setRoomsList()
+                // this.setStylesList()
+                this.render()
             },
+
+            /*setRoomsList: function() {
+                window.dispatchEvent(
+                    new CustomEvent('setRoomsItems', {
+                        detail: {
+                            rooms: this.rooms
+                        },
+                    })
+                );
+            },
+
+            setStylesList: function() {
+                window.dispatchEvent(
+                    new CustomEvent('setStylesItems', {
+                        detail: {
+                            styles: this.styles
+                        },
+                    })
+                );
+            },
+
+            setResultsList: function() {
+                window.dispatchEvent(
+                    new CustomEvent('setResultsItems', {
+                        detail: {
+                            results: this.results
+                        },
+                    })
+                );
+            },*/
 
             render: function() {
                 this.$el.html(

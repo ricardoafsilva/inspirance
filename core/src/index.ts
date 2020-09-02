@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default {
-    async getData(): Promise<ResultItemInterface> {
+    async getData(selectedRoom: string, selectedStyle: string): Promise<ResultItemInterface> {
         return axios({
             'method': 'GET',
             'url': 'https://www.googleapis.com/customsearch/v1',
@@ -9,7 +9,7 @@ export default {
             'params': {
                 'key': process.env.INPIRANCE_KEY,
                 'cx': process.env.CUSTOM_SEARCH_KEY,
-                'q': 'industrial+kitchen',
+                'q': `${selectedRoom}+${selectedStyle}+decor`,
                 'searchType': 'image',
             },
         }).then(response => {

@@ -30,25 +30,39 @@ const steps: StepInterface[] = [
 
 type State = {
     currentStep: number,
+    selectedRoom: string,
+    selectedStyle: string
 }
 
 class Home extends Component<{}, State> {
     state: State = {
         currentStep: 0,
+        selectedRoom: 'Any room',
+        selectedStyle: 'Any style',
     }
 
-    handleChange = (index: number) => {
+    handleChange = (index: number, selectedOption?: object) => {
         this.setState({
-            currentStep: index
+            currentStep: index,
+            ...selectedOption
+        }, () => {
+            index === 2 && window.dispatchEvent(
+                new CustomEvent('requestResultsList', {
+                    detail: {
+                        selectedRoom: this.state.selectedRoom,
+                        selectedStyle: this.state.selectedStyle
+                    }
+                })
+            )
         })
     }
 
     renderStepContainer = () => {
         switch (this.state.currentStep) {
             default:
-                return <RoomsContainer handleChange={this.handleChange} />
+                return <RoomsContainer handleChange={this.handleChange} selectedRoom={this.state.selectedRoom} />
             case 1:
-                return <StylesContainer handleChange={this.handleChange} />
+                return <StylesContainer handleChange={this.handleChange} selectedStyle={this.state.selectedStyle} />
             case 2:
                 return <ResultsContainer />
         }
