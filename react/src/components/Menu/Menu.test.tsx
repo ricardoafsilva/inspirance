@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 
 import Menu from './Menu'
 
-describe('First React component test with Enzyme', () => {
+describe('Testing Menu component', () => {
     it('renders without crashing', () => {
         shallow(<Menu />)
     })
