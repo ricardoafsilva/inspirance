@@ -2,7 +2,7 @@ define([
     'underscore',
     'jquery',
     'Views/HomeView',
-    '../../../core/dist/bundle',
+    'core_bundle',
 ], (_, $, HomeView, Core) => {
     const homeView = new(HomeView())({
         el: $('#main')

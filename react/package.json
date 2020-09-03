@@ -7,7 +7,7 @@
     "name": "inspirance-react",
     "version": "1.0.0",
     "scripts": {
-        "build": "webpack --config=webpack.config.prod.js",
+        "build": "jest && webpack --config=webpack.config.prod.js",
         "build-dev": "webpack --config=webpack.config.dev.js",
         "start": "webpack-dev-server --config=webpack.config.dev.js --open",
         "test": "jest"

@@ -2,8 +2,8 @@ define([
     'underscore',
     'backbone',
     'tpl!../Templates/HomeTemplate.tpl',
-    '../../../../core/dist/bundle',
-    '../../../../react/dist/bundle'
+    'core_bundle',
+    'react_bundle'
 ], (_, Backbone, HomeTemplate, Core) => {
     return () => {
         const HomeView = Backbone.View.extend({
