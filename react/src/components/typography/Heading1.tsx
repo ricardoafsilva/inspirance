@@ -5,6 +5,7 @@ import cx from 'classnames'
 import './Heading1.scss'
 
 type Props = {
+    children?: any,
     className?: string,
 }
 
