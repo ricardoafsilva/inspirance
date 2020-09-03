@@ -1,7 +1,7 @@
 import React, { Component, MouseEvent } from 'react'
 import cx from 'classnames'
 
-import ResultItem from './ResultItem.tsx'
+import ResultItem from './ResultItem'
 
 import './ResultsList.scss'
 

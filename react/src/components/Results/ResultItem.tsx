@@ -1,7 +1,7 @@
 import React, { Component, MouseEvent } from 'react'
 import cx from 'classnames'
 
-import ResultModal from './ResultModal.tsx'
+import ResultModal from './ResultModal'
 
 import './ResultItem.scss'
 

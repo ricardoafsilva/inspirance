@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
 
-import Paragraph from '../Typography/Paragraph.tsx'
-import ResultsList from './ResultsList.tsx'
+import Paragraph from '../Typography/Paragraph'
+import ResultsList from './ResultsList'
 
 import './ResultsContainer.scss'
 

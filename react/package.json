@@ -18,39 +18,40 @@
         "@babel/preset-env": "^7.11.0",
         "@babel/preset-react": "^7.10.4",
         "@babel/preset-typescript": "^7.10.4",
-        "@types/enzyme": "^3.10.5",
         "@types/enzyme-adapter-react-16": "^1.0.6",
+        "@types/enzyme": "^3.10.5",
+        "@types/jest": "^26.0.13",
         "@types/node": "^14.6.1",
-        "@types/react": "^16.9.48",
         "@types/react-dom": "^16.9.8",
+        "@types/react": "^16.9.48",
         "autoprefixer": "^9.8.6",
         "babel-loader": "^8.1.0",
         "base64-inline-loader": "^1.1.1",
         "clean-webpack-plugin": "^3.0.0",
         "css-loader": "^4.2.2",
-        "enzyme": "^3.11.0",
         "enzyme-adapter-react-16": "^1.15.4",
         "enzyme-to-json": "^3.5.0",
-        "eslint": "^7.7.0",
+        "enzyme": "^3.11.0",
         "eslint-plugin-react": "^7.20.6",
+        "eslint": "^7.7.0",
         "file-loader": "^6.0.0",
         "html-loader": "^1.3.0",
         "html-webpack-plugin": "^4.3.0",
         "identity-obj-proxy": "^3.0.0",
-        "jest": "^26.4.2",
         "jest-fetch-mock": "^3.0.3",
+        "jest": "^26.4.2",
         "postcss-loader": "^3.0.0",
-        "sass": "^1.26.10",
         "sass-loader": "^9.0.3",
+        "sass": "^1.26.10",
         "style-loader": "^1.2.1",
         "to-string-loader": "^1.1.6",
         "ts-jest": "^26.3.0",
         "ts-loader": "^8.0.3",
         "typescript": "^4.0.2",
-        "webpack": "^4.44.1",
         "webpack-cli": "^3.3.12",
         "webpack-dev-server": "^3.11.0",
-        "webpack-merge": "^5.1.2"
+        "webpack-merge": "^5.1.2",
+        "webpack": "^4.44.1"
     },
     "dependencies": {
         "classnames": "^2.2.6",
@@ -59,13 +60,22 @@
         "react-shadow-dom-retarget-events": "^1.0.11"
     },
     "jest": {
-        "moduleDirectories": ["node_modules"],
-        "moduleFileExtensions": ["ts", "tsx", "js", "jsx"],
+        "moduleDirectories": [
+            "node_modules"
+        ],
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx"
+        ],
         "moduleNameMapper": {
             "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/fileTransformer.js",
             "\\.(css|scss)$": "identity-obj-proxy"
         },
-        "setupFilesAfterEnv": ["<rootDir>/src/setupTests.ts"],
+        "setupFilesAfterEnv": [
+            "<rootDir>/src/setupTests.ts"
+        ],
         "snapshotSerializers": [
             "enzyme-to-json/serializer"
         ],

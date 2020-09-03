@@ -1,7 +1,7 @@
 import React, { Component, MouseEvent } from 'react'
 import cx from 'classnames'
 
-import Paragraph from '../Typography/Paragraph.tsx'
+import Paragraph from '../Typography/Paragraph'
 
 import iconArrow from './../../../public/images/icon-gray-arrow.png'
 
@@ -30,7 +30,7 @@ class SelectInput extends Component<Props, State> {
             }
         }
     }
-    
+
     state: State = {
         open: false,
         selected: this.getSelectedFromProps() || 0
@@ -63,7 +63,8 @@ class SelectInput extends Component<Props, State> {
                     {item}
                 </Paragraph>
         })
-        items = [<Paragraph className='placeholder' onClick={this.handleClick(this.state.selected)} key='select-input-first'>{propItems[this.state.selected]}</Paragraph>, ...items]
+
+        if(items.length) items = [<Paragraph className='placeholder' onClick={this.handleClick(this.state.selected)} key='select-input-first'>{propItems[this.state.selected]}</Paragraph>, ...items]
 
         return (
             <div className={cx('select-input-container', this.state.open && 'open')}>
