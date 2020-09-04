@@ -2,13 +2,25 @@
     "name": "inspirance-backbone",
     "version": "1.0.0",
     "description": "2020 onboarding project.",
+    "keywords": [
+        "react",
+        "webpack",
+        "typescript",
+        "jest",
+        "enzyme",
+        "sass",
+        "axios",
+        "API",
+        "backbonejs",
+        "requirejs"
+    ],
     "main": "index.js",
     "repository": "git@github.com:ricardoafsilva/inspirance.git",
     "scripts": {
-        "serve": "http-server -c-1 -o ./backbone",
+        "serve": "grunt dev && http-server -c-1 -o ./backbone",
         "serve-build": "grunt && http-server ./build -c-1 -o"
     },
-    "author": "Ricardo Silva",
+    "author": "Ricardo A. F. Silva",
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.11.6",

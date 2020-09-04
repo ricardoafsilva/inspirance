@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                 files: [{
                         expand: true,
                         cwd: 'backbone/',
-                        src: ['**/*', '!./index.html'],
+                        src: ['**/*', '!index.html', '!README.md'],
                         dest: 'build/',
                     },
                     {
@@ -85,5 +85,6 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['clean:build', 'run', 'copy', 'cssmin', 'babel', 'clean:css'])
+    grunt.registerTask('dev', ['run'])
 
 }
