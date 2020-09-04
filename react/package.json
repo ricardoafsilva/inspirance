@@ -1,7 +1,14 @@
 {
-    "author": "",
-    "description": "2020 onboarding project.",
-    "keywords": [],
+    "author": "Ricardo A. F. Silva",
+    "description": "Responsible for creating react components and generating AMD bundle",
+    "keywords": [
+        "react",
+        "webpack",
+        "typescript",
+        "jest",
+        "enzyme",
+        "sass"
+    ],
     "license": "ISC",
     "main": "index.js",
     "name": "inspirance-react",
