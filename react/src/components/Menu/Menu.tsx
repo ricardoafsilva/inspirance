@@ -19,7 +19,7 @@ const menuItems: MenuItemInterface[] = [
         iconActive: iconHomeActive,
         url: '/'
     },
-    {
+    /*{
         title: 'Search',
         iconRegular: iconSearch,
         iconActive: iconSearchActive,
@@ -36,7 +36,7 @@ const menuItems: MenuItemInterface[] = [
         iconRegular: iconFavorite,
         iconActive: iconFavoriteActive,
         url: '/saved'
-    }
+    }*/
 ]
 
 type State = {
