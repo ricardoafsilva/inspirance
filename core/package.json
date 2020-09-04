@@ -14,7 +14,10 @@
         "build": "webpack --config=webpack.config.js --mode=production"
     },
     "dependencies": {
-        "axios": "^0.20.0"
+        "axios-cache-adapter": "^2.5.0",
+        "axios": "^0.20.0",
+        "localforage-memoryStorageDriver": "^0.9.2",
+        "localforage": "^1.9.0"
     },
     "devDependencies": {
         "@types/node": "^14.6.2",
