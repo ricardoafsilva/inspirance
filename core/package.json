@@ -6,7 +6,7 @@
         "axios",
         "api"
     ],
-    "license": "ISC",
+    "license": "MIT",
     "main": "index.js",
     "name": "onboarding-api-handler",
     "version": "1.0.0",
